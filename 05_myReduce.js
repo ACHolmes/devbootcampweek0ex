@@ -12,6 +12,18 @@
     -> 20
 */
 
-const myReduce = (arr, f, init) => {}
+/** Assume the description above is incorrect? Should be reduce is the same as fold in ocaml */
+
+const myReduce = (arr, f, init) => {
+  let count = 0;
+  const helper = (arr, f, count) => {
+    if (arr.length != 0){
+      count = f(count, arr[0]);
+      return helper(arr.slice(1,arr.length), f, count)
+    }
+    return count
+  }
+  return helper(arr, f, init)
+}
 
 module.exports = myReduce
