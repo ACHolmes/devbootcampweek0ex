@@ -12,6 +12,13 @@
       3
  */
 
-const myForEach = (arr, f) => {}
+const myForEach = (arr, f) => {
+  let out = [];
+  for (let i = 0; i < arr.length; i++)
+  {
+    out.push(f(arr[i]))
+  }
+  return out
+}
 
 module.exports = myForEach

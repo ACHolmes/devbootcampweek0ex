@@ -29,19 +29,33 @@ const TreeOfLife = {
 }
 
 //TODO -- Write a function which returns the domain "archae"
-const getArchae = () => {}
+const getArchae = () => {
+  return TreeOfLife.archae
+}
 
 // TODO -- Write a function which returns the array of humans
-const getHumans = () => {}
+const getHumans = () => {
+  return TreeOfLife.eukarya.animalia.humans
+}
 
 // TODO -- Write a function which adds a name to the array of humans
-const addHuman = (name) => {}
+const addHuman = (name) => {
+  TreeOfLife.eukarya.animalia.humans.push(name);
+  return TreeOfLife;
+}
 
 // TODO -- Write a fuction which returns the data representing the "bestDomain"
-const getBestDomain = () => {}
+const getBestDomain = () => {
+  let key = TreeOfLife.bestDomain;
+  return TreeOfLife[key]
+}
 
 // TODO -- Write a function which sets the best domain to "eukarya" and then returns the "bestDomain"
-const setGetBestDomain = () => {}
+const setGetBestDomain = () => {
+  TreeOfLife.bestDomain = "eukarya";
+  let key = TreeOfLife.bestDomain;
+  return TreeOfLife[key]
+}
 
 /**
   TODO
@@ -53,10 +67,20 @@ const setGetBestDomain = () => {}
     'phylum',
   ]
  */
-const getRanks = () => {}
+const getRanks = () => {
+  let out = [];
+  out.push(TreeOfLife.rank);
+  out.push(TreeOfLife.eukarya.rank);
+  out.push(TreeOfLife.eukarya.animalia.rank);
+  return out
+}
 
 // TODO -- Write a function which uses destructuring and the rest operator to return everything BUT the "eukarya"
-const noEukaryotes = () => {}
+const noEukaryotes = () => {
+  let out = TreeOfLife;
+  delete out.eukarya;
+  return out
+}
 
 module.exports = {
   getArchae,

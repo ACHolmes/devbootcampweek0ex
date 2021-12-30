@@ -10,6 +10,17 @@
     -> [2, 4, 6]
  */
 
-const myMap = (arr, f) => {}
+const myMap = (arr, f) => {
+  let out = [];
+  const helper = (arr, f) => {
+    if(arr.length != 0)
+    {
+      out.push(f(arr[0]));
+      return helper(arr.slice(1, arr.length), f)
+    }
+    return out 
+  }
+  return helper(arr, f)
+}
 
 module.exports = myMap
