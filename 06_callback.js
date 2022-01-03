@@ -19,3 +19,7 @@ const getUser = (callback) => {
   }
   callback(user)
 }
+
+getUser((user) => {coinToss(user.guess, (output) => {console.log(output)})})
+
+
